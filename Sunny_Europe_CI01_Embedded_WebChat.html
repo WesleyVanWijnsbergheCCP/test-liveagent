@@ -79,17 +79,17 @@
 				}];
 
 				embedded_svc.init(
-					'https://sunnyeurope--dev01.sandbox.my.salesforce.com',
-					'https://sunnyeurope--dev01.sandbox.my.site.com/testhelp',
+					'https://sunnyeurope--ci01.sandbox.my.salesforce.com',
+					'https://sunnyeurope--ci01.sandbox.my.site.com/',
 					gslbBaseURL,
-					'00D3O0000008poO',
+					'00D3O0000008r6W',
 					'zSUN_Sunny_Online_Webchat',
 					{
 						baseLiveAgentContentURL: 'https://c.la2-c1cs-fra.salesforceliveagent.com/content',
-						deploymentId: '5723O00000000vl',
-						buttonId: '5733O000000013j',
+						deploymentId: '5723O0000004D7C',
+						buttonId: '5733O0000004Cnb',
 						baseLiveAgentURL: 'https://d.la2-c1cs-fra.salesforceliveagent.com/chat',
-						eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3O0000004DAgUAM_1834080417e',
+						eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3O00000000epUAA_18369c56334',
 						isOfflineSupportEnabled: true
 					}
 				);
@@ -97,7 +97,7 @@
 
 			if (!window.embedded_svc) {
 				var s = document.createElement('script');
-				s.setAttribute('src', 'https://sunnyeurope--dev01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+				s.setAttribute('src', 'https://sunnyeurope--ci01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 				s.onload = function() {
 					initESW(null);
 				};
