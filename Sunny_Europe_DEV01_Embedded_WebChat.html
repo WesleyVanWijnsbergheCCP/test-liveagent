@@ -114,23 +114,6 @@
 				initESW('https://service.force.com');
 			}
 
-			!(function () {
-				let a = XMLHttpRequest.prototype.open;
-				XMLHttpRequest.prototype.open = function () {
-				  this.addEventListener("load", (b) => {
-					let c = document.querySelector("input#zSUN_Account_ERP_Customer_Id__c");
-					if (c != null) {
-					  document.querySelector(
-						'label[for="zSUN_Account_ERP_Customer_Id__c"]'
-					  ).style.display = "none";
-					  c.style.display = "none";
-					  c.value = "SAI9999999";
-					  c.dispatchEvent(new Event("change", { bubbles: !0 }));
-					}
-				  });
-				  a.apply(this, arguments);
-				};
-			  })();
 		</script>
 	</body>
 </html>
