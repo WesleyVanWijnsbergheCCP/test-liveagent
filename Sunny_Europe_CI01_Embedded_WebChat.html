@@ -79,32 +79,57 @@
 				}];
 
 				embedded_svc.init(
-					'https://sunnyeurope--ci01.sandbox.my.salesforce.com',
-					'https://sunnyeurope--ci01.sandbox.my.site.com/',
+					"https://sunnyeurope--ci01.sandbox.my.salesforce.com",
+					"https://sunnyeurope--ci01.sandbox.my.site.com/",
 					gslbBaseURL,
-					'00D3O0000008r6W',
-					'zSUN_Sunny_Online_Webchat',
+					"00D3O0000008r6W",
+					"zSUN_Sunny_Online_Webchat",
 					{
-						baseLiveAgentContentURL: 'https://c.la2-c1cs-fra.salesforceliveagent.com/content',
-						deploymentId: '5723O0000004D7C',
-						buttonId: '5733O0000004Cnb',
-						baseLiveAgentURL: 'https://d.la2-c1cs-fra.salesforceliveagent.com/chat',
-						eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3O00000000epUAA_18369c56334',
-						isOfflineSupportEnabled: true
+						baseLiveAgentContentURL:
+						"https://c.la2-c1cs-fra.salesforceliveagent.com/content",
+						deploymentId: "5723O0000004D7C",
+						buttonId: "5733O0000004Cnb",
+						baseLiveAgentURL:
+						"https://d.la2-c1cs-fra.salesforceliveagent.com/chat",
+						eswLiveAgentDevName:
+						"EmbeddedServiceLiveAgent_Parent04I3O00000000epUAA_18369c56334",
+						isOfflineSupportEnabled: true,
 					}
 				);
-			};
+      		};
 
 			if (!window.embedded_svc) {
-				var s = document.createElement('script');
-				s.setAttribute('src', 'https://sunnyeurope--ci01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-				s.onload = function() {
+				var s = document.createElement("script");
+				s.setAttribute(
+					"src",
+					"https://sunnyeurope--ci01.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js"
+				);
+				s.onload = function () {
 					initESW(null);
 				};
 				document.body.appendChild(s);
-			} else {
-				initESW('https://service.force.com');
+			} 
+			else {
+				initESW("https://service.force.com");
 			}
+
+			!(function () {
+				let a = XMLHttpRequest.prototype.open;
+				XMLHttpRequest.prototype.open = function () {
+					this.addEventListener("load", (b) => {
+						let c = document.querySelector("input#zSUN_Account_ERP_Customer_Id__c");
+						if (c != null) {
+							document.querySelector(
+								'label[for="zSUN_Account_ERP_Customer_Id__c"]'
+							).style.display = "none";
+							c.style.display = "none";
+							c.value = "SAI9999999";
+							c.dispatchEvent(new Event("change", { bubbles: !0 }));
+						}
+				});
+				a.apply(this, arguments);
+				};
+			})();
 		</script>
 	</body>
 </html>
