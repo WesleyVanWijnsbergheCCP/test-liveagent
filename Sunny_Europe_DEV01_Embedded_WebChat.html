@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		 <!-- the content goes here -->
-        <h1>Testing the chat - Hidden field zSUN_Account_ERP_Number__c</h1>
+        <h1>Testing the chat - Hidden field zSUN_Account_ERP_Customer_Id__c</h1>
 		
 		<style type='text/css'>
 			.embeddedServiceHelpButton .helpButton .uiButton {
@@ -118,10 +118,10 @@
 				let a = XMLHttpRequest.prototype.open;
 				XMLHttpRequest.prototype.open = function () {
 				  this.addEventListener("load", (b) => {
-					let c = document.querySelector("input#zSUN_Account_ERP_Number__c");
+					let c = document.querySelector("input#zSUN_Account_ERP_Customer_Id__c");
 					if (c != null) {
 					  document.querySelector(
-						'label[for="zSUN_Account_ERP_Number__c"]'
+						'label[for="zSUN_Account_ERP_Customer_Id__c"]'
 					  ).style.display = "none";
 					  c.style.display = "none";
 					  c.value = "SAI9999999";
