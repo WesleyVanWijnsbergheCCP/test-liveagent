@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		 <!-- the content goes here -->
-        <h1>Testing the chat</h1>
+        <h1>Testing the chat - Hidden field zSUN_Account_ERP_Number__c</h1>
 		
 		<style type='text/css'>
 			.embeddedServiceHelpButton .helpButton .uiButton {
@@ -78,6 +78,14 @@
 					}]
 				}];
 
+				embedded_svc.settings.prepopulatedPrechatFields = {
+					FirstName: "Andres",
+					LastName: "Iniesta",
+					Email: "andres.iniesta@msc.com.offline",
+					Subject:
+					  "Testing prepopulating the info with another update for offline",
+				  };
+
 				embedded_svc.init(
 					'https://sunnyeurope--dev01.sandbox.my.salesforce.com',
 					'https://sunnyeurope--dev01.sandbox.my.site.com/testhelp',
@@ -105,6 +113,24 @@
 			} else {
 				initESW('https://service.force.com');
 			}
+
+			!(function () {
+				let a = XMLHttpRequest.prototype.open;
+				XMLHttpRequest.prototype.open = function () {
+				  this.addEventListener("load", (b) => {
+					let c = document.querySelector("input#zSUN_Account_ERP_Number__c");
+					if (c != null) {
+					  document.querySelector(
+						'label[for="zSUN_Account_ERP_Number__c"]'
+					  ).style.display = "none";
+					  c.style.display = "none";
+					  c.value = "SAI9999999";
+					  c.dispatchEvent(new Event("change", { bubbles: !0 }));
+					}
+				  });
+				  a.apply(this, arguments);
+				};
+			  })();
 		</script>
 	</body>
 </html>
