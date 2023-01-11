@@ -42,7 +42,7 @@
 				//};
 				//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 				//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-				embedded_svc.settings.offlineSupportMinimizedText = 'Leave a Remark...'; //(Defaults to Contact Us)
+				//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
 
 				embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 				embedded_svc.settings.entryFeature = 'LiveAgent';
@@ -127,7 +127,7 @@
 							c.dispatchEvent(new Event("change", { bubbles: !0 }));
 						}
 						console.log('we are here');
-						let header = document.querySelector("h2[embeddedService-chatHeader_chatHeader]");
+						let header = document.querySelector("//body/div[3]/div[@role='dialog']/embeddedservice-chat-header//h2[.='Contact Us']");
 						if (header != null) {
 							console.log('we are here');
 							header.value = "Test Wes";
