@@ -126,8 +126,9 @@
 							c.value = "SAI9999999";
 							c.dispatchEvent(new Event("change", { bubbles: !0 }));
 						}
-						let header = document.querySelector(".embeddedservice-chatheader_chatheader");
+						let header = document.querySelector("h2[embeddedService-chatHeader_chatHeader]");
 						if (header != null) {
+							console.log('we are here');
 							header.value = "Test Wes";
 							header.dispatchEvent(new Event("change", { bubbles: !0 }));
 						}
