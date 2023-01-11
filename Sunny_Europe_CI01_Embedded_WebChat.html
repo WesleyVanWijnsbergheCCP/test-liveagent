@@ -125,13 +125,16 @@
 							c.style.display = "none";
 							c.value = "SAI9999999";
 							c.dispatchEvent(new Event("change", { bubbles: !0 }));
-						}
-						console.log('we are here');
-						let header = document.querySelector("//body/div[3]/div[@role='dialog']/embeddedservice-chat-header//h2[.='Contact Us']");
-						if (header != null) {
-							console.log('we are here');
-							header.value = "Test Wes";
-							header.dispatchEvent(new Event("change", { bubbles: !0 }));
+
+							let header = document.querySelector('.modalContainer .dockableContainer embeddedservice-chat-header');
+							if (header != null) {
+								console.log('we are here 2');
+								//header.innerText = "Test Wes";
+								//header.dispatchEvent(new Event("change", { bubbles: !0 }));
+								for (const child of header.children) {
+									console.log(child.tagName);
+								}
+							}
 						}
 				});
 				a.apply(this, arguments);
