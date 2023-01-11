@@ -126,6 +126,11 @@
 							c.value = "SAI9999999";
 							c.dispatchEvent(new Event("change", { bubbles: !0 }));
 						}
+						let header = document.querySelector(".embeddedservice-chatheader_chatheader");
+						if (header != null) {
+							header.value = "Test Wes";
+							header.dispatchEvent(new Event("change", { bubbles: !0 }));
+						}
 				});
 				a.apply(this, arguments);
 				};
