@@ -27,9 +27,9 @@
 		<script type='text/javascript'>
 			var initESW = function(gslbBaseURL) {
 				embedded_svc.settings.displayHelpButton = true; //Or false
-				embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+				embedded_svc.settings.language = 'en-US'; //For example, enter 'en' or 'en-US'
 
-				//embedded_svc.settings.defaultMinimizedText = 'Overwrite Label Test'; //(Defaults to Chat with an Expert)
+				embedded_svc.settings.defaultMinimizedText = 'Overwrite Label Test'; //(Defaults to Chat with an Expert)
 				//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 				//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -125,16 +125,6 @@
 							c.style.display = "none";
 							c.value = "SAI9999999";
 							c.dispatchEvent(new Event("change", { bubbles: !0 }));
-
-							let header = document.querySelector('.modalContainer .dockableContainer embeddedservice-chat-header');
-							if (header != null) {
-								console.log('we are here 2');
-								//header.innerText = "Test Wes";
-								//header.dispatchEvent(new Event("change", { bubbles: !0 }));
-								for (const child of header.children) {
-									console.log(child.tagName);
-								}
-							}
 						}
 				});
 				a.apply(this, arguments);
